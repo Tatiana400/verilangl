@@ -2,21 +2,22 @@ module Plugin
 
 import IO;
 import ParseTree;
-import Syntax;
 import util::Reflective;
 import util::IDEServices;
 import util::LanguageServer;
+import Relation;
+import Syntax;
 
-PathConfig pcfg = getProjectPathConfig(|project://verilangl|, mode=interpreter());
+PathConfig pcfg = getProjectPathConfig(|project://verilangl|);
 
-Language veriLang = language(pcfg, "VeriLang", "vl", "Plugin", "contribs");
+Language verilangLang = language(pcfg, "VeriLang", "vl", "Plugin", "contribs");
 
 set[LanguageService] contribs() = {
-    parser(start[Module] (str program, loc src) {
-        return parse(#start[Module], program, src);
-    })
+  parser(start[Module] (str program, loc src) {
+    return parse(#start[Module], program, src);
+  })
 };
 
 void main() {
-    registerLanguage(veriLang);
+  registerLanguage(verilangLang);
 }
