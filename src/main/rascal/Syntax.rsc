@@ -21,11 +21,9 @@ syntax Elements
   | expressionDef: ExpressionDef
   | relationDef:   RelationDef
   | equationDef:   EquationDef
-  | attributeDef:  AttributeDef
   ;
 
 syntax EquationDef  = equationDef:  "defequation"  Id eqName "end" ;
-syntax AttributeDef = attributeDef: "defattribute" Id atName "end" ;
 syntax RelationDef = relationDef: "defrelation" Id relName "end";
 
 syntax SpaceDef

@@ -14,6 +14,16 @@ data Elements
   | varDef(VarDef vd)
   | ruleDef(RuleDef rd)
   | expressionDef(ExpressionDef ed)
+  | relationDef(RelationDef red)
+  | equationDef(EquationDef eqd)
+  ;
+
+data RelationDef
+  = relationDef(str relName)
+  ;
+
+data EquationDef
+  = equationDef(str eqName)
   ;
 
 data SpaceDef
