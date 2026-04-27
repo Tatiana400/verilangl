@@ -160,4 +160,5 @@ keyword Keywords
   | "forall"        | "exists"
   | "and"           | "or"
   | "in"            | "neg"
+  | "defer"
   ;
