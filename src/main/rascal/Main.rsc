@@ -1,8 +1,12 @@
 module Main
 
 import IO;
+import Parser;
+import Generator;
 
-int main(int testArgument=0) {
-    println("argument: <testArgument>");
-    return testArgument;
+void main() {
+    tree = parseModule(|project://verilangl/src/main/rascal/instance/test.vl|);
+    rVal = generator(tree);
+    println(rVal);
+    writeFile(|project://verilangl/src/main/rascal/instance/output.txt|, rVal);
 }

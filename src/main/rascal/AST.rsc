@@ -127,3 +127,15 @@ data Oper
   | parenExpr(Expr innerExpr)
   | idExpr(str idVal)
   ;
+
+// NUEVO
+
+data Type
+  = userType(str name)
+  | intType()
+  | boolType()
+  | charType()
+  | strType()
+  ;
+
+data Arrow = arrow(str target);
